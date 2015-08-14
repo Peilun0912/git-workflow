@@ -40,24 +40,69 @@
   </head>
 
   <body>
-
     <div class="reveal">
-
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Reveal.js</h1>
-          <h3>The HTML Presentation Framework</h3>
-          <p>
-            <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-          </p>
+          <h1>Git 開發流程介紹</h1>
         </section>
 
         <section>
-          <h2>Hello There</h2>
-          <p>
-            reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-          </p>
+          <h2>嗨！</h2>
+          <p>接下來將介紹名為 gitflow 的一種搭配 git 進行軟體開發的流程，以及存放 git 儲存庫的平台和輔助使用的工具。</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>分支</h2>
+            <p>了解 gitflow 各個分支（branch）所扮演的角色，就差不多能理解整個開發流程了。</p>
+          </section>
+          <section>
+            <h3>master</h3>
+            <ul>
+              <li class="fragment fade-in">git 預設一開始就有的分支。</li>
+              <li class="fragment fade-in">gitflow 兩條主要分支之一<span class="fragment fade-in">（代表不管怎樣都不能將它砍掉）。</span></li>
+              <li class="fragment fade-in">這條分支上的軟體是穩定版，意即跟線上在跑的那一份一模一樣。</li>
+              <li class="fragment fade-in">只允許進行合併（merge）hotfix/* 和 release/* 這兩條分支的動作，不能直接向它提交（commit）變更紀錄。</li>
+            </ul>
+          </section>
+          <section>
+            <h3>develop</h3>
+            <ul>
+              <li class="fragment fade-in">git 預設一開始<strong>沒有</strong>的分支，<span class="fragment fade-in">理論上在一開始就要從 master 分出來。</span></li>
+              <li class="fragment fade-in">gitflow 兩條主要分支之一<span class="fragment fade-in">（代表它與 master 生死與共）。</span></li>
+              <li class="fragment fade-in">這條分支上的軟體是未來要釋出的版本。</li>
+              <li class="fragment fade-in">可以直接向它提交變更紀錄，但是建議只提交修正小 bug 或是替某段程式碼加上註解等比較不重要的紀錄。</li>
+              <li class="fragment fade-in">如果是要開發新的功能，就要另開 feature/* 分支。</li>
+            </ul>
+          </section>
+          <section>
+            <h3>feature/*</h3>
+            <ul>
+              <li class="fragment fade-in">開發新功能的分支。</li>
+              <li class="fragment fade-in">從 develop 分出來。</li>
+              <li class="fragment fade-in">出來跑的總是要還，新功能開發完就要合併回 develop。</li>
+              <li class="fragment fade-in">命名慣例：feature/it-is-an-amazing-feature。</li>
+            </ul>
+          </section>
+          <section>
+            <h3>release/*</h3>
+            <ul>
+              <li class="fragment fade-in">當軟體的新功能開發到一個階段，要釋出到穩定版前就要開這個分支。</li>
+              <li class="fragment fade-in">從 develop 分出來。</li>
+              <li class="fragment fade-in">在這個分支上只能提交修正 bug、寫寫文件或註解等變更紀錄。</li>
+              <li class="fragment fade-in">當一切準備就緒，就要同時合併回 master 和 develop。</li>
+            </ul>
+          </section>
+          <section>
+            <h3>hotfix/*</h3>
+            <ul>
+              <li class="fragment fade-in">修復穩定版軟體 bug 的分支。</li>
+              <li class="fragment fade-in">從 master 分出來。</li>
+              <li class="fragment fade-in">當 bug 修完，要同時合併回 master 和 develop。</li>
+              <li class="fragment fade-in">命名慣例：hotfix/fix-a-bug。</li>
+            </ul>
+          </section>
         </section>
 
         <!-- Example of nested vertical slides -->
