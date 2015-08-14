@@ -107,7 +107,7 @@
 
         <section>
           <section>
-            <h2>Pull requests</h2>
+            <h2>Pull Requests</h2>
             <p>Git 的分支總是分久必合，合久必分，但是合併分支通常影響軟體的狀態甚鉅，為了確保程式碼的品質，當要合併回主要分支時，應該一律開 pull request。</p>
           </section>
           <section>
@@ -115,6 +115,43 @@
             <p class="fragment fade-in">Pull requests 並非 git 內建的功能，而是由儲存庫的服務平台提供。</p>
             <p class="fragment fade-in">簡單來講，開 pull requests 就是發出合併分支的請求，平台會提供介面讓其他開發者完整檢視軟體將會有哪些變更，他們可以就每一行變動的程式碼討論、提出問題，這階段就是所謂的 code review。</p>
             <p class="fragment fade-in">人人都可以開 pull requests，但是在比較嚴謹的情況下，只有該儲存庫的管理員帳戶能通過這個請求。</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Repository Hosting Services</h2>
+            <p>接下來要介紹存放 git 儲存庫的平台，主要有三位候選人：<a href="https://bitbucket.org/">Bitbucket</a>、<a href="https://github.com/">GitHub</a> 和 <a href="https://gitlab.com/">Gitlab</a>。</p>
+            <p class="fragment fade-in">我們對平台的需求主要就私人儲存庫、pull requests 和 issues 等功能，如果考慮到未來可能要有自動佈署的功能，就需要 webhooks 這種功能。</p>
+            <p class="fragment fade-in">以上的功能三個候選平台都具備，所以就直接看那個成本最低。</p>
+          </section>
+          <section>
+            <h3>Free Plan</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>平台</th>
+                  <th>限制</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bitbucket</td>
+                  <td>最多只能授權 5 人存取私人儲存庫。</td>
+                </tr>
+                <tr>
+                  <td>GitHub</td>
+                  <td>只允許公開儲存庫。</td>
+                </tr>
+                <tr>
+                  <td>Gitlab</td>
+                  <td>沒限制，我也不知道他們怎麼賺錢的。</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="fragment fade-in">於是 Github 就掰了。</p>
+            <p class="fragment fade-in">以我們目前的團隊人數來講，Bitbucket 和 Gitlab 都可以用，目前也看不出哪一個比較好。</p>
+            <p class="fragment fade-in">由於我上一份工作用的是 Bitbucket，再加上下一章要介紹的工具跟這個平台搭配得還不錯，故我偏向使用 Bitbucket。</p>
           </section>
         </section>
 
