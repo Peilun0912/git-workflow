@@ -201,6 +201,34 @@
         </section>
 
         <section>
+          <section>
+            <h2>Tips</h2>
+            <p>一些小心得。</p>
+          </section>
+          <section>
+            <h3>不要改變過去</h3>
+            <p>避免使用 git push -f 這條指令。</p>
+          </section>
+          <section>
+            <h3>開啟 git 自動修正換行字元的功能</h3>
+            <p>輸入指令：</p>
+            <pre>
+              <code>git config --global core.autocrlf true</code>
+            </pre>
+            <p>或是在 .git 所在位置新增 .gitattributes 檔：</p>
+            <pre>
+              <code>* text=auto</code>
+            </pre>
+          </section>
+          <section>
+            <img src="./img/CRLF-LF.png" alt="">
+          </section>
+          <section>
+            <h3>git pull --rebase</h3>
+          </section>
+        </section>
+
+        <section>
           <h2>References</h2>
           <ul>
             <li>
